@@ -24,7 +24,8 @@
 
     if (self) {
         _chartLine              = [CAShapeLayer layer];
-        _chartLine.lineCap      = kCALineCapButt;
+        _chartLine.lineCap      = kCALineCapRound;
+        _chartLine.lineJoin     = kCALineJoinRound;
         _chartLine.fillColor    = [[UIColor whiteColor] CGColor];
         _chartLine.lineWidth    = self.frame.size.width;
         _chartLine.strokeEnd    = 0.0;
@@ -54,7 +55,8 @@
     [progressline addLineToPoint:CGPointMake(self.frame.size.width / 2.0, startPosY)];
 
     [progressline setLineWidth:1.0];
-    [progressline setLineCapStyle:kCGLineCapSquare];
+    [progressline setLineJoinStyle:kCGLineJoinRound];
+    [progressline setLineCapStyle:kCGLineCapRound];
     [self addAnimationIfNeededWithProgressLine:progressline];
 
 
